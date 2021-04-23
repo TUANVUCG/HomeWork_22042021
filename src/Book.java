@@ -1,33 +1,24 @@
 import java.util.Scanner;
 
 public class Book extends Document{
-    private Document document = new Document();
     private String authorName;
     private int amountPage;
 
     public Book() {
     }
 
-    public Book(Document document, String authorName, int amountPage) {
-        this.document = document;
+    public Book(String authorName, int amountPage) {
         this.authorName = authorName;
         this.amountPage = amountPage;
     }
 
-    public Book(int documentCode, String publishingCompany, int amount, Document document, String authorName, int amountPage) {
+    public Book(int documentCode, String publishingCompany, int amount,String authorName, int amountPage) {
         super(documentCode, publishingCompany, amount);
-        this.document = document;
         this.authorName = authorName;
         this.amountPage = amountPage;
     }
 
-    public Document getDocument() {
-        return document;
-    }
 
-    public void setDocument(Document document) {
-        this.document = document;
-    }
 
     public String getAuthorName() {
         return authorName;
@@ -46,7 +37,7 @@ public class Book extends Document{
     }
 
     public void inputBookInfo(){
-        document.inputDocumentInfo();
+        inputDocumentInfo();
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập tên tác giả : ");
         authorName = sc.nextLine();
@@ -56,10 +47,8 @@ public class Book extends Document{
 
     @Override
     public String toString() {
-        return "Book{" +
-                "document=" + document +
-                ", authorName='" + authorName + '\'' +
-                ", amountPage=" + amountPage +
-                '}';
+        return "Sách : " + super.toString() +
+                "Tên tác giả : " + authorName + "    " +
+                "Số trang : " + amountPage ;
     }
 }

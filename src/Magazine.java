@@ -4,22 +4,18 @@ public class Magazine extends Document{
 
     private int releaseNumber;
     private int mouthRelease;
-    private Document document =  new Document();
-
     public Magazine() {
     }
 
-    public Magazine(int releaseNumber, int mouthRelease, Document document) {
+    public Magazine( int releaseNumber, int mouthRelease) {
         this.releaseNumber = releaseNumber;
         this.mouthRelease = mouthRelease;
-        this.document = document;
     }
 
-    public Magazine(int documentCode, String publishingCompany, int amount, int releaseNumber, int mouthRelease, Document document) {
+    public Magazine(int documentCode, String publishingCompany, int amount, int releaseNumber, int mouthRelease) {
         super(documentCode, publishingCompany, amount);
         this.releaseNumber = releaseNumber;
         this.mouthRelease = mouthRelease;
-        this.document = document;
     }
 
     public int getReleaseNumber() {
@@ -38,16 +34,10 @@ public class Magazine extends Document{
         this.mouthRelease = mouthRelease;
     }
 
-    public Document getDocument() {
-        return document;
-    }
 
-    public void setDocument(Document document) {
-        this.document = document;
-    }
 
     public void inputMagazineInfo(){
-        document.inputDocumentInfo();
+        inputDocumentInfo();
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhập số phát hành : ");
         releaseNumber = sc.nextInt();
@@ -59,10 +49,8 @@ public class Magazine extends Document{
 
     @Override
     public String toString() {
-        return "Magazine{" +
-                "releaseNumber=" + releaseNumber +
-                ", mouthRelease=" + mouthRelease +
-                ", document=" + document +
-                '}';
+        return "Tạp chí : " + super.toString() +"    "+
+                "Số phát hành : " + releaseNumber +"    "+
+                "Tháng phát hành : " + mouthRelease ;
     }
 }

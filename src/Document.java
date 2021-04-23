@@ -52,10 +52,8 @@ public class Document {
 
     @Override
     public String toString() {
-        return "Document{" +
-                "documentCode='" + id + '\'' +
-                ", publishingCompany='" + publishingCompany + '\'' +
-                ", amount=" + amount +
-                '}';
+        return  "Mã tài liệu : " + id + "   " +
+                "Nhà xuất bản : " + publishingCompany + "    " +
+                "Số lượng : " + amount +"   ";
     }
 }
